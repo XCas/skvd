@@ -1,0 +1,178 @@
+html {
+	height: 100%;
+	width: 100%;
+}
+
+body {
+	font-family: source-sans-pro, serif;
+	font-size: 16px;
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	background-color: #f1f1f1;
+	overflow: hidden;
+	position: relative;
+}
+
+
+ul {
+	margin: 10px;
+	padding: 0;
+	list-style: none;
+}
+
+li {
+	display: block;
+	padding: 0;
+	display: box;
+	width: 100%;
+}
+
+li>a {
+	color: #000;
+	display: block;
+	padding: 5px;
+	text-decoration: none;
+	width: 100%;
+	box-flex: 1;
+	box-sizing: border-box;
+	background-position: -10px 0;
+	background-repeat: no-repeat;
+	background-size: 10px 100%;
+}
+
+li>a * {
+	pointer-events: none;
+}
+
+/*********
+ * Table *
+ *********/
+table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+table tr {
+}
+
+table tr td {
+	border: 1px solid #cccccc;
+}
+
+table tr th {
+	border: 1px solid #cccccc;
+}
+
+/**********
+ * Header *
+ **********/
+#header-frame header {
+	height: 45px;
+}
+
+#header-frame header h1 {
+	font-size: 1.6em;
+	text-align: center;
+	float: left;
+	margin: 7px 0 0 0;
+	width: 33%;
+}
+
+#header-frame header #hash-track {
+	float: left;
+	width: 33%;
+}
+
+#header-frame header #hash-track img {
+	margin: 5px;
+}
+
+#header-frame header #settings {
+	float: left;
+	width: 33%;
+}
+
+#header-frame header #settings img {
+	float: right;
+	margin: 5px;
+}
+
+/*************
+ * App-Frame *
+ *************/
+#app-frame {
+	clear: both;
+	height: 100px;
+}
+
+/*************
+ * Main-View *
+ *************/
+#main-view nav ul {
+	text-align: center;
+	margin: 0;
+    padding: 0;
+    list-style: none;
+    background-color: #fff;
+}
+
+#main-view nav ul li {
+	float: left;
+    padding: 0;
+    margin: 20px;
+    display: box;
+    width: 80px;
+    height: 100px;
+    text-align: center;
+}
+
+#main-view nav ul li a, nav ul li a:visited {
+	font-size: 1em;
+	text-decoration: none;
+	color: #000000;
+}
+
+#main-view nav ul li img {
+	padding: 0;
+    margin: 0;
+    width: 80px;
+    height: 80px;
+}
+
+/********
+ * View *
+ ********/
+.view {
+	padding: 5px;
+} 
+
+/*****************
+ * Settings-View *
+ *****************/
+#settings-view fieldset {
+	margin: 0px;
+	padding: 12px;
+	border: 0px;
+}
+
+#settings-view fieldset input {
+	display: block;
+	margin: 5px 0 0 0;
+	width: 100%;
+}
+
+/*************
+ * Scrolling *
+ *************/
+.scroll {
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+      overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    position: absolute;
+    top: 50px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+}

@@ -1,0 +1,122 @@
+<html>
+<head>
+	<title>S.K.V.D.e.V.</title>
+	<script src="css/source-sans-pro.js"></script>
+	<link href="css/styles.css" rel="stylesheet">
+
+<script type="text/javascript">
+$(document).bind("mobileinit", function() {
+    $.support.cors = true;
+    $.mobile.allowCrossDomainPages = true;
+});
+</script>
+
+</head>
+<body>
+	
+	<div id="header-frame"></div>
+	<div id="app-frame"></div>
+	
+	<script id="header-tpl" type="text/x-handlebars-template">
+	<header>
+		<div id="hash-track">
+
+		{{#if hash}}
+				<a href="#"><img src="img/home.png"></a>
+				<a href="#"><img src="img/back.png" onClick="history.go(-1);navigator.app.backHistory();"></a>
+		{{else}}
+				&nbsp;
+		{{/if}}
+		</div>
+
+		<h1>S.K.V.D.e.V.</h1>
+
+		<div id="settings">
+			<a href="#settings"><img src="img/settings.png"></a>
+		</div>
+	</header>
+	</script>
+	
+	<script id="main-view-tpl" type="text/x-handlebars-template">
+	<div id="main-view" class="view scroll">
+		<nav>
+			<ul>
+	      		{{#buttons}}
+				<li><a href="#{{link}}"><img src="img/{{icon}}.png">{{caption}}</a></li>
+				{{/buttons}}
+			</ul>
+		</nav>
+	</div>
+	</script>
+	
+	<script id="events-view-tpl" type="text/x-handlebars-template">
+	<div id="events-view" class="view scroll">
+		<table id="events">
+			<tr><th>Datum</th><th>Uhrzeit</th><th>Ort</th></tr>
+      		{{#events}}
+			<tr><td>{{startdate}}</td><td>{{starttime}}</td><td>{{slug}}</td></tr>
+			{{/events}}
+		</table>
+
+	</div>
+	</script>
+	
+	<script id="news-view-tpl" type="text/x-handlebars-template">
+	<div id="news-view" class="view scroll">
+		<ul>
+      		{{#news}}
+			<h2>{{title}}</h2>
+			<p>{{{content}}}</p>
+			{{/news}}
+		</ul>
+	</div>
+	</script>
+
+	<script id="numbers-view-tpl" type="text/x-handlebars-template">
+	<div id="numbers-view" class="view scroll">
+		<table id="numbers">
+			<tr><th>Name</th><th>Telefon</th><th>Mobil</th></tr>
+			{{#numbers}}
+			<tr><td>{{name}}</td><td>{{phone}}</td><td>{{mobile}}</td></tr>
+			{{/numbers}}
+		</table>
+	</div>
+	</script>
+
+	<script id="settings-view-tpl" type="text/x-handlebars-template">	
+	<div id="settings-view" class="view scroll">
+		<form>
+			<fieldset>
+				{{#if key}}
+					<input type="password" value="***************"/>
+				{{else}}
+					<input type="password"/>
+				{{/if}}
+
+				<input type="button" value="Speichern"/>
+			</fieldset>
+		</form>
+	</div>
+	</script>
+	
+	<!-- Javascript Libraries -->
+	<script src="lib/jquery-1.8.2.min.js"></script>
+	<script src="lib/handlebars.js"></script>
+	<script src="lib/fastclick.js"></script>
+	<script src="cordova.js"></script>
+	
+	<!-- Data Connector -->
+	<script src="js/cData.js"></script>
+
+	<!-- App-Classes -->
+	<script src="js/cSettingsView.js"></script>
+	<script src="js/cEventsView.js"></script>
+	<script src="js/cNewsView.js"></script>
+	<script src="js/cNumbersView.js"></script>
+	<script src="js/cMainView.js"></script>
+	<script src="js/cHeader.js"></script>
+	
+	<!-- Start app -->
+	<script src="js/cApp.js"></script>
+</body>
+</html>
