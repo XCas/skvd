@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="de.schalmeien-dudweiler.app" version="0.9.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
-    <name>SKVD App</name>
+    <name>SKVD</name>
     <description>
         Die SKVD Schalodri-App
     </description>
     <author email="UCas@UCasLife.de" href="http://ucaslife.de">
-        Uwe caspari
+        Uwe Caspari
     </author>
     <content src="index.html" />
     <preference name="permissions" value="none" />
