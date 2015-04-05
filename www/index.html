@@ -51,13 +51,13 @@ $(document).bind("mobileinit", function() {
 	
 	<script id="events-view-tpl" type="text/x-handlebars-template">
 	<div id="events-view" class="view scroll">
-		<table id="events">
-			<tr><th>Datum</th><th>Uhrzeit</th><th>Ort</th></tr>
-      		{{#events}}
-			<tr><td>{{startdate}}</td><td>{{starttime}}</td><td>{{slug}}</td></tr>
-			{{/events}}
+		<table>
+		{{#events}}
+				<tr><td class="date">{{startdate}}</td><td class="time">{{starttime}} - {{endtime}}</td></tr>
+				<tr><td class="title" colspan="2">{{name}}</td></tr>
+				<tr><td colspan="2"><hr /></td>
+		{{/events}}
 		</table>
-
 	</div>
 	</script>
 	
@@ -65,9 +65,11 @@ $(document).bind("mobileinit", function() {
 	<div id="news-view" class="view scroll">
 		<ul>
       		{{#news}}
-			<h2>{{title}}</h2>
-			<p>{{{content}}}</p>
-			{{/news}}
+			<li>
+				<h2>{{title}}</h2>
+				<p>{{{content}}}</p>
+				{{/news}}
+			</li>
 		</ul>
 	</div>
 	</script>

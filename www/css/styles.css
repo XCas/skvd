@@ -28,23 +28,6 @@ li {
 	width: 100%;
 }
 
-li>a {
-	color: #000;
-	display: block;
-	padding: 5px;
-	text-decoration: none;
-	width: 100%;
-	box-flex: 1;
-	box-sizing: border-box;
-	background-position: -10px 0;
-	background-repeat: no-repeat;
-	background-size: 10px 100%;
-}
-
-li>a * {
-	pointer-events: none;
-}
-
 /*********
  * Table *
  *********/
@@ -106,6 +89,13 @@ table tr th {
 	height: 100px;
 }
 
+/********
+ * View *
+ ********/
+.view {
+	padding: 5px;
+} 
+
 /*************
  * Main-View *
  *************/
@@ -140,12 +130,33 @@ table tr th {
     height: 80px;
 }
 
-/********
- * View *
- ********/
-.view {
-	padding: 5px;
-} 
+/***************
+ * Events-View *
+ ***************/
+#events-view table tr td {
+	border: 0px;
+	font-weight: bold;
+}
+
+#events-view table tr td.time {
+	width: 150px;
+}
+
+#events-view table tr td.title {
+	color: #3333FF;
+}
+
+
+/*************
+ * News-View *
+ *************/
+#news-view ul li {
+	border-top: dotted 1px #777777;
+}
+
+#news-view ul li:first-child {
+	border-top: 0px;
+}
 
 /*****************
  * Settings-View *

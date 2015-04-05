@@ -22,7 +22,6 @@ var Data = function() {
 		    	window.localStorage.setItem(object, data);
 		    },
 		    error: function (xhr, ajaxOptions, thrownError) {
-		    	alert("errorstatus: " + xhr.status + " ajaxoptions: " + ajaxOptions + " throwError: " + thrownError); 
 		    } 
 		});
 	};
