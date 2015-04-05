@@ -1,7 +1,7 @@
 var Data = function() {
 	
 	this.url = "http://app.schalmeien-dudweiler.de/api/";
-	this.key = "schalodris";
+	this.key = 	window.localStorage.getItem("key");
 	
 	this.initialize = function() {
 	    var self = this;

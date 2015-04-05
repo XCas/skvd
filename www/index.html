@@ -1,19 +1,17 @@
 <html>
 <head>
-	<title>S.K.V.D.e.V.</title>
+	<title>SKVD App</title>
 	<script src="css/source-sans-pro.js"></script>
 	<link href="css/styles.css" rel="stylesheet">
 
-<script type="text/javascript">
-$(document).bind("mobileinit", function() {
-    $.support.cors = true;
-    $.mobile.allowCrossDomainPages = true;
-});
-</script>
-
+	<script type="text/javascript">
+	$(document).bind("mobileinit", function() {
+	    $.support.cors = true;
+	    $.mobile.allowCrossDomainPages = true;
+	});
+	</script>
 </head>
 <body>
-	
 	<div id="header-frame"></div>
 	<div id="app-frame"></div>
 	
@@ -22,14 +20,14 @@ $(document).bind("mobileinit", function() {
 		<div id="hash-track">
 
 		{{#if hash}}
-				<a href="#"><img src="img/home.png"></a>
 				<a href="#"><img src="img/back.png" onClick="history.go(-1);navigator.app.backHistory();"></a>
 		{{else}}
 				&nbsp;
 		{{/if}}
+				<img src="img/skvd.png">
 		</div>
 
-		<h1>S.K.V.D.e.V.</h1>
+		<h1></h1>
 
 		<div id="settings">
 			<a href="#settings"><img src="img/settings.png"></a>
@@ -87,15 +85,25 @@ $(document).bind("mobileinit", function() {
 
 	<script id="settings-view-tpl" type="text/x-handlebars-template">	
 	<div id="settings-view" class="view scroll">
+
+		<h2>Schalmeien- und Kulturverein<br />Dudweiler e.V.</h2>
+		<p>Lizenz: <a target="_blank" href="http://www.gnu.de/documents/gpl.de.html">GNU GPL</a></p>
+		<p>Autor: <a target="_blank" href="http://ucaslife.de">Uwe Caspari</a> (<a href="mailto:UCas@UCasLife.de">UCas@UCasLife.de</a>)</p>
+		
+		<h2>SKVD Intern</h2>
 		<form>
 			<fieldset>
-				{{#if key}}
-					<input type="password" value="***************"/>
-				{{else}}
-					<input type="password"/>
-				{{/if}}
+				<input id="keyinput" name="keyinput" type="password"/>
+				<input type="button" value="Speichern" onClick="SettingsView.btnInternPasswordSaveClick();" />
+			</fieldset>
+		</form>
+		<p id="msg">
+		</p>
 
-				<input type="button" value="Speichern"/>
+		<h2>Synchronisieren</h2>
+		<form>
+			<fieldset>
+				<input type="button" value="Sync" onClick="SettingsView.btnSyncClick();" />
 			</fieldset>
 		</form>
 	</div>
