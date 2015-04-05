@@ -1,17 +1,30 @@
 var SettingsView = function() {
-	this.settings = false;
+	this.key = false;
 
 	this.initialize = function() {
-		settings = JSON.parse(window.localStorage.getItem("settings"));
-		if ( settings != null ) {
-			this.settings = settings;
+		key = window.localStorage.getItem("key");
+		if ( key != null ) {
+			this.key = key;
 		}
-		console.log(this.settings);
 	};
 	
 	this.render = function() {
 		var source   = $("#settings-view-tpl").html();
 	    var template = Handlebars.compile(source);
-	    return template(this.settings);
+	    return template();
 	};
+};
+
+SettingsView.btnInternPasswordSaveClick = function() {
+	window.localStorage.setItem("key", $("#keyinput").val());
+//	window.localStorage.setItem("keyIsValid", "true");
+	$("#msg").html("Key gespeichert");
+	$("#keyinput").val("");
+    this.data = new Data();
+    this.data.initialize();
+};
+
+SettingsView.btnSyncClick = function() {
+    this.data = new Data();
+    this.data.initialize();
 };

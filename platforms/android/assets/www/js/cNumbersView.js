@@ -11,6 +11,7 @@ var NumbersView = function() {
 	this.render = function() {
 	    var source   = $("#numbers-view-tpl").html();
 	    var template = Handlebars.compile(source);
+	    console.debug(this.numbers);
 	    return template(this.numbers);
 	};
 };
