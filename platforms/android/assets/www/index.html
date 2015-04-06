@@ -77,7 +77,12 @@
 		<table id="numbers">
 			<tr><th>Name</th><th>Telefon</th><th>Mobil</th></tr>
 			{{#numbers}}
-			<tr><td>{{name}}</td><td>{{phone}}</td><td>{{mobile}}</td></tr>
+			<tr>
+
+				<td>{{name}}</td>
+				<td><a rel="external" target="_webapp" href="tel:{{phone}}">{{phone}}</a></td>
+				<td><a rel="external" target="_system" href="tel:{{mobile}}">{{mobile}}</a></td>
+			</tr>
 			{{/numbers}}
 		</table>
 	</div>

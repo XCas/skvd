@@ -1,0 +1,1 @@
+http://plugins.telerik.com/plugin/secure-http

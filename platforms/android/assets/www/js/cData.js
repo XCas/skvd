@@ -1,6 +1,6 @@
 var Data = function() {
 	
-	this.url = "http://app.schalmeien-dudweiler.de/api/";
+	this.url = "https://app.schalmeien-dudweiler.de/api/";
 	this.key = 	window.localStorage.getItem("key");
 	
 	this.initialize = function() {
@@ -22,6 +22,7 @@ var Data = function() {
 		    	window.localStorage.setItem(object, data);
 		    },
 		    error: function (xhr, ajaxOptions, thrownError) {
+		    	alert(JSON.stringify(xhr) + " ; " + JSON.stringify(ajaxOptions) + " ; " + JSON.stringify(thrownError));
 		    } 
 		});
 	};
