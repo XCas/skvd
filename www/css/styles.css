@@ -158,6 +158,18 @@ table tr th {
 	border-top: 0px;
 }
 
+/****************
+ * Numbers-View *
+ ****************/
+@media screen and (max-width: 400px) {
+#numbers-view table#numbers tr {
+	height: 50px;
+}
+
+#numbers-view table#numbers tr td, #numbers-view table#numbers tr th {
+	border: 1px dotted #cccccc;
+}
+
 /*****************
  * Settings-View *
  *****************/
