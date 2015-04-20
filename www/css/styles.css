@@ -9,7 +9,7 @@ body {
 	margin: 0;
 	padding: 0;
 	height: 100%;
-	background-color: #f1f1f1;
+	background-color: #FFFFFF;
 	overflow: hidden;
 	position: relative;
 }
@@ -50,36 +50,29 @@ table tr th {
 /**********
  * Header *
  **********/
-#header-frame header {
+#header-frame header ul#menu {
+    margin: 0;
+    padding: 0;
 	height: 40px;
+	background-color: #ffffff;
+	border-bottom: #FFCCCC solid 1px;
+	text-align: justify;
 }
 
-#header-frame header h1 {
-	font-size: 1.6em;
-	text-align: center;
-	float: left;
-	margin: 7px 0 0 0;
-	width: 33%;
+#header-frame header ul#menu li {
+	display: inline;
 }
 
-#header-frame header #hash-track {
-	float: left;
-	width: 33%;
+#header-frame header ul#menu li.line {
+	padding-left: 100%;
 }
 
-#header-frame header #hash-track img {
+#header-frame header ul#menu li a img {
+	margin: auto;
 	margin: 5px;
+	width: 30px;
 }
 
-#header-frame header #settings {
-	float: left;
-	width: 33%;
-}
-
-#header-frame header #settings img {
-	float: right;
-	margin: 5px;
-}
 
 /*************
  * App-Frame *
@@ -93,7 +86,7 @@ table tr th {
  * View *
  ********/
 .view {
-	padding: 5px;
+	.padding: 5px;
 } 
 
 /*************
@@ -104,7 +97,7 @@ table tr th {
 	margin: 0;
     padding: 0;
     list-style: none;
-    background-color: #fff;
+    background-color: #FFFFFF;
 }
 
 #main-view nav ul li {
@@ -133,73 +126,111 @@ table tr th {
 /***************
  * Events-View *
  ***************/
-#events-view table tr td {
-	border: 0px;
+#events-view ul {
+	margin: 0px;
+}
+
+#events-view ul li a {
+	display: block;
+ 	border-top: 1px dotted #cccccc;
+	padding: 10px 10px 10px 10px;
+	text-decoration: none;
+	color: black;
+	font-size: 0.9em;
+}
+
+#events-view ul li:first-child a {
+	border-top: 0px;
+}
+
+#events-view ul li a h3 {
+	margin: 0px;
+}
+
+#events-view ul li a p.time {
+	margin: 0px;
+	font-style: italic;
+	
+}
+
+#events-view ul li a p.name {
+	margin: 0px;
+	color: #3333FF;
 	font-weight: bold;
 }
-
-#events-view table tr td.time {
-	width: 150px;
-}
-
-#events-view table tr td.title {
-	color: #3333FF;
-}
-
 
 /*************
  * News-View *
  *************/
+#news-view ul {
+	margin: 0px;
+}
+
 #news-view ul li {
-	border-top: dotted 1px #777777;
+	border-top: 1px solid #cccccc;
 }
 
 #news-view ul li:first-child {
 	border-top: 0px;
 }
 
+#news-view ul li p {
+	margin: 10px;
+}
+
+#news-view ul li h2 {
+	font-size: 1.1em;
+	margin: 0;
+	margin: 10px;
+}
+
 /****************
  * Numbers-View *
  ****************/
-@media screen and (max-width: 400px) {
-#numbers-view table#numbers tr {
-	height: 50px;
+#numbers-view ul {
+	margin: 0px;
 }
 
-#numbers-view table#numbers tr td, #numbers-view table#numbers tr th {
-	border: 1px dotted #cccccc;
+#numbers-view ul li a {
+	display: block;
+ 	border-top: 1px dotted #cccccc;
+	padding: 10px 10px 10px 10px;
+	text-decoration: none;
+	color: black;
+	font-size: 0.9em;
+}
+
+#numbers-view ul li:first-child a {
+	border-top: 0px;
+}
+
+#numbers-view ul li a h3 {
+	margin: 0px;
 }
 
 /*****************
  * Settings-View *
  *****************/
-#settings-view p {
-	text-align: center;
+#settings-view ul {
+	margin: 0px;
 }
 
-#settings-view h2 {
-	text-align: center;
-	font-size: 1.2em;
-	margin: 0;
-	border-top: dotted 1px #cccccc;
+#settings-view ul li a {
+	display: block;
+	border-top: 1px dotted #cccccc;
+	padding: 10px 10px 10px 10px;
+	text-decoration: none;
+	color: black;
+	font-size: 0.9em;
 }
 
-#settings-view h2:first-child {
+#settings-view ul li:first-child a {
 	border-top: 0px;
 }
 
-#settings-view fieldset {
+#settings-view ul li a h3 {
 	margin: 0px;
-	padding: 12px;
-	border: 0px;
 }
-
-#settings-view fieldset input {
-	display: block;
-	margin: 5px 0 0 0;
-	width: 100%;
-}
-
 
 /*************
  * Scrolling *

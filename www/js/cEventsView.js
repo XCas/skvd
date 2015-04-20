@@ -18,9 +18,24 @@ var EventsView = function() {
 		    var year = dt.getFullYear();
 		    
 		    var date = weekday + "., " + day + ". " + month + " " + year;
-		    events["events"][i]["startdate"] = date;
-		    events["events"][i]["starttime"] = events["events"][i]["starttime"].split(":")[0] + ":" + events["events"][i]["starttime"].split(":")[1];
-		    events["events"][i]["endtime"] = events["events"][i]["endtime"].split(":")[0] + ":" + events["events"][i]["endtime"].split(":")[1];
+		    events["events"][i]["date"] = date;
+		    
+		    var starttime = events["events"][i]["starttime"].split(":")[0] + ":" + events["events"][i]["starttime"].split(":")[1];
+		    var endtime = events["events"][i]["endtime"].split(":")[0] + ":" + events["events"][i]["endtime"].split(":")[1];
+		    
+		    var time = "";
+		    
+		    if ( starttime == "00:00" ) { 
+		    	time = "Uhrzeit unbekannt";
+		    }
+		    else if ( ( endtime == "00:00" ) || ( starttime == endtime ) ) {
+		    	time = "Ab " + starttime + " Uhr";
+		    }
+		    else {
+		    	time = starttime + " - " + endtime + " " + " Uhr";
+		    }
+		    
+		    events["events"][i]["time"] = time;
 		}
 		this.events = events;
 	};

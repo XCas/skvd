@@ -5,10 +5,10 @@
 	<link href="css/styles.css" rel="stylesheet">
 
 	<script type="text/javascript">
-	$(document).bind("mobileinit", function() {
-	    $.support.cors = true;
-	    $.mobile.allowCrossDomainPages = true;
-	});
+		$(document).bind("mobileinit", function() {
+		    $.support.cors = true;
+		    $.mobile.allowCrossDomainPages = true;
+		});
 	</script>
 </head>
 <body>
@@ -17,45 +17,38 @@
 	
 	<script id="header-tpl" type="text/x-handlebars-template">
 	<header>
-		<div id="hash-track">
+		<!--<div id="hash-track">
 
-		{{#if hash}}
+		{{#if hashh}}
 				<a href="#"><img src="img/back.png" onClick="history.go(-1);navigator.app.backHistory();"></a>
 		{{else}}
 				&nbsp;
 		{{/if}}
-				<img src="img/skvd.png">
 		</div>
+		-->
 
-		<h1></h1>
-
-		<div id="settings">
-			<a href="#settings"><img src="img/settings.png"></a>
-		</div>
+		<ul id="menu">
+	      	{{#menu}}
+				<li><a href="{{ahref}}"><img src="img/{{imgsrc}}.png"></a></li>
+			{{/menu}}
+			<li class="line">&nbsp;</li>
+		</ul>
 	</header>
-	</script>
-	
-	<script id="main-view-tpl" type="text/x-handlebars-template">
-	<div id="main-view" class="view scroll">
-		<nav>
-			<ul>
-	      		{{#buttons}}
-				<li><a href="#{{link}}"><img src="img/{{icon}}.png">{{caption}}</a></li>
-				{{/buttons}}
-			</ul>
-		</nav>
-	</div>
 	</script>
 	
 	<script id="events-view-tpl" type="text/x-handlebars-template">
 	<div id="events-view" class="view scroll">
-		<table>
+		<ul>
 		{{#events}}
-				<tr><td class="date">{{startdate}}</td><td class="time">{{starttime}} - {{endtime}} Uhr</td></tr>
-				<tr><td class="title" colspan="2">{{name}}</td></tr>
-				<tr><td colspan="2"><hr /></td>
+				<li>
+					<a href="#events">
+						<h3>{{date}}</h3>
+						<p class="time">{{time}}</p>
+						<p class="name">{{name}}</p>
+					</a>
+				</li>
 		{{/events}}
-		</table>
+		</ul>
 	</div>
 	</script>
 	
@@ -74,6 +67,29 @@
 
 	<script id="numbers-view-tpl" type="text/x-handlebars-template">
 	<div id="numbers-view" class="view scroll">
+			<ul>
+			{{#numbers}}
+				<li>
+					<a href="#numbers">
+						<h3>{{name}}</h3>
+						{{#if phone }}
+							{{#if mobile }}
+								{{phone}} / {{mobile}}
+							{{else}}
+								{{phone}}
+							{{/if}}
+						{{else}}
+							{{mobile}}
+						{{/if}}
+					</a>
+				</li>
+			{{/numbers}}
+			<ul>
+	</div>
+	</script>
+
+	<script id="number-view-tpl" type="text/x-handlebars-template">
+	<div id="numbers-view" class="view scroll">
 		<table id="numbers">
 			<tr><th>Name</th><th>Telefon</th><th>Mobil</th></tr>
 			{{#numbers}}
@@ -88,7 +104,22 @@
 	</div>
 	</script>
 
-	<script id="settings-view-tpl" type="text/x-handlebars-template">	
+	<script id="settings-view-tpl" type="text/x-handlebars-template">
+		<div id="settings-view" class="view scroll">
+			<ul>
+			{{#settings}}
+				<li>
+					<a href="#settings" onClick="{{onClick}}">
+						<h3>{{title}}</h3>
+						{{text}}
+					</a>
+				</li>
+			{{/settings}}
+			<ul>
+		</div>
+	</script>
+
+	<script id="settings-view-tpl-alt" type="text/x-handlebars-template">	
 	<div id="settings-view" class="view scroll">
 
 		<h2>Schalmeien- und Kulturverein<br />Dudweiler e.V.</h2>
