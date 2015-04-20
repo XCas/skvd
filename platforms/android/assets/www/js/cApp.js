@@ -23,22 +23,14 @@ var SKVDApp = function() {
 		var self = this;
 	    var hash = window.location.hash;
 	    
-	    if (hash) {
-	    	var header = new Header();
-	    	$("#header-frame").html(header.render(true));
-	    }
-	    else {
-	    	var header = new Header();
-	    	$("#header-frame").html(header.render(false));
-	    }
-	    
+	    var header = new Header();
+	    $("#header-frame").html(header.render(hash));
 	    
 	    if (!hash) {
-			var mv = new MainView();
-		    $("#app-frame").html(mv.render());
+			window.location.hash = this.eventsURL;
 	    }
 	    
-	    else if (hash.match(this.eventsURL)) {
+	    if (hash.match(this.eventsURL)) {
 	    	var ev = new EventsView();
 	    	ev.initialize();
 	    	$("#app-frame").html(ev.render());

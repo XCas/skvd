@@ -1,6 +1,6 @@
 var NumbersView = function() {
 	this.numbers = false;
-	
+	console.log(window.location.hash);
 	this.initialize = function() {
 		numbers = JSON.parse(window.localStorage.getItem("numbers"));
 		if ( numbers != null ) {
