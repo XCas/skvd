@@ -132,7 +132,7 @@ table tr th {
 
 #events-view ul li a {
 	display: block;
- 	border-top: 1px dotted #cccccc;
+ 	border-top: 1px solid #cccccc;
 	padding: 10px 10px 10px 10px;
 	text-decoration: none;
 	color: black;
@@ -193,7 +193,7 @@ table tr th {
 
 #numbers-view ul li a {
 	display: block;
- 	border-top: 1px dotted #cccccc;
+ 	border-top: 1px solid #cccccc;
 	padding: 10px 10px 10px 10px;
 	text-decoration: none;
 	color: black;
@@ -217,7 +217,7 @@ table tr th {
 
 #settings-view ul li a {
 	display: block;
-	border-top: 1px dotted #cccccc;
+	border-top: 1px solid #cccccc;
 	padding: 10px 10px 10px 10px;
 	text-decoration: none;
 	color: black;
@@ -241,7 +241,7 @@ table tr th {
       overflow: auto;
     -webkit-overflow-scrolling: touch;
     position: absolute;
-    top: 50px;
+    top: 40px;
     bottom: 0px;
     left: 0px;
     right: 0px;
