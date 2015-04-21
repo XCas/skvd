@@ -1,3 +1,9 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	border: 0;
+}
+
 html {
 	height: 100%;
 	width: 100%;
@@ -9,23 +15,9 @@ body {
 	margin: 0;
 	padding: 0;
 	height: 100%;
-	background-color: #FFFFFF;
+	background-color: #DDDDDD;
 	overflow: hidden;
 	position: relative;
-}
-
-
-ul {
-	margin: 10px;
-	padding: 0;
-	list-style: none;
-}
-
-li {
-	display: block;
-	padding: 0;
-	display: box;
-	width: 100%;
 }
 
 /*********
@@ -53,9 +45,9 @@ table tr th {
 #header-frame header ul#menu {
     margin: 0;
     padding: 0;
-	height: 40px;
+	height: 39px;
 	background-color: #ffffff;
-	border-bottom: #FFCCCC solid 1px;
+	border-bottom: #CCCCCC solid 1px;
 	text-align: justify;
 }
 
@@ -126,21 +118,20 @@ table tr th {
 /***************
  * Events-View *
  ***************/
-#events-view ul {
-	margin: 0px;
+#events-view ul li {
 }
 
 #events-view ul li a {
-	display: block;
- 	border-top: 1px solid #cccccc;
+	margin: 10px;
 	padding: 10px 10px 10px 10px;
+	background-color: #FFFFFF;
+	
+	display: block;
+	border: 1px solid #CCCCCC;
+	border-radius: 7px;
 	text-decoration: none;
 	color: black;
 	font-size: 0.9em;
-}
-
-#events-view ul li:first-child a {
-	border-top: 0px;
 }
 
 #events-view ul li a h3 {
@@ -162,26 +153,38 @@ table tr th {
 /*************
  * News-View *
  *************/
-#news-view ul {
+#news-view {
 	margin: 0px;
+	padding: 0px;
 }
 
 #news-view ul li {
-	border-top: 1px solid #cccccc;
+	border: 1px solid #CCCCCC;
+	border-radius: 7px;
+	background-color: #FFFFFF;
+	margin: 0 10px 10px 10px;
+	padding: 15px;
+	display: inline-block;
 }
 
 #news-view ul li:first-child {
-	border-top: 0px;
+	margin-top: 10px;
 }
 
 #news-view ul li p {
-	margin: 10px;
+	margin: 15px 0 0 0;
 }
 
 #news-view ul li h2 {
-	font-size: 1.1em;
+	font-size: 1.2em;
+	margin: 0 0 0px 0;
+}
+
+#news-view ul li p.date {
+	font-size: 0.9em;
+	font-style: italic;
 	margin: 0;
-	margin: 10px;
+	padding: 0;
 }
 
 /****************
@@ -191,7 +194,13 @@ table tr th {
 	margin: 0px;
 }
 
-#numbers-view ul li a {
+#numbers-view ul li {
+	border: 1px solid #CCCCCC;
+	border-radius: 7px;
+	background-color: #FFFFFF;
+	margin: 10px 10px 10px 10px;
+	padding: 15px;
+	
 	display: block;
  	border-top: 1px solid #cccccc;
 	padding: 10px 10px 10px 10px;
@@ -200,14 +209,18 @@ table tr th {
 	font-size: 0.9em;
 }
 
-#numbers-view ul li:first-child a {
-	border-top: 0px;
-}
-
-#numbers-view ul li a h3 {
+#numbers-view ul li h2 {
 	margin: 0px;
+	font-size: 1.2em;
 }
 
+#numbers-view ul li p {
+	display: inline;
+}
+
+#numbers-view ul li p:second-child {
+	margin-left: 10px;
+}
 /*****************
  * Settings-View *
  *****************/
@@ -216,6 +229,7 @@ table tr th {
 }
 
 #settings-view ul li a {
+	background-color: white;
 	display: block;
 	border-top: 1px solid #cccccc;
 	padding: 10px 10px 10px 10px;

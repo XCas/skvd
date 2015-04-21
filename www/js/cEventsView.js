@@ -35,7 +35,9 @@ var EventsView = function() {
 		    }
 		    events["events"][i]["time"] = time;
 		}
-		this.events = events;
+		if ( events != null ) {
+			this.events = events;
+		}	
 	};
 	
 	this.render = function() {

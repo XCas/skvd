@@ -1,6 +1,7 @@
 <html>
 <head>
 	<title>SKVD App</title>
+    <meta charset="utf-8">
 	<script src="css/source-sans-pro.js"></script>
 	<link href="css/styles.css" rel="stylesheet">
 
@@ -65,6 +66,7 @@
       		{{#news}}
 			<li>
 				<h2>{{title}}</h2>
+				<p class="date">{{date}} - {{time}}<p>
 				<p>{{{content}}}</p>
 				{{/news}}
 			</li>
@@ -76,19 +78,19 @@
 	<div id="numbers-view" class="view scroll">
 			<ul>
 			{{#numbers}}
-				<li>
-					<a href="#numbers&{{id}}">
-						<h3>{{name}}</h3>
+				<li>				
+						<h2>{{name}}</h2>
 						{{#if phone }}
 							{{#if mobile }}
-								{{phone}} / {{mobile}}
+								<p>☎ <a href="tel:{{phone}}">{{phone}}</a></p>
+								<p><img src="img/mobile_phone_icon.png"> <a href="tel:{{mobile}}">{{mobile}}</a></p>
 							{{else}}
-								{{phone}}
+								<p>☎ <a href="tel:{{phone}}">{{phone}}</a></p>
 							{{/if}}
 						{{else}}
-							{{mobile}}
+							<p><img src="img/mobile_phone_icon.png"> <a href="tel:{{mobile}}">{{mobile}}</a></p>
 						{{/if}}
-					</a>
+					
 				</li>
 			{{/numbers}}
 			<ul>
