@@ -11,13 +11,7 @@ html {
 
 body {
 	font-family: source-sans-pro, serif;
-	font-size: 16px;
-	margin: 0;
-	padding: 0;
-	height: 100%;
 	background-color: #DDDDDD;
-	overflow: hidden;
-	position: relative;
 }
 
 /**********
@@ -27,7 +21,7 @@ body {
     margin: 0;
     padding: 0;
 	height: 39px;
-	background-color: #ffffff;
+	background-color: #FFFFFF;
 	border-bottom: #CCCCCC solid 1px;
 	text-align: justify;
 }
@@ -37,7 +31,7 @@ body {
 }
 
 #header-frame header ul#menu li.line {
-	padding-left: 100%;
+	padding-left: 99%;
 }
 
 #header-frame header ul#menu li a img {
@@ -71,14 +65,26 @@ body {
 }
 
 a.box {
-	border-color: #FFAAAA;
+	border-color: #888888;
 }
 
 .box h2 {
 	font-size: 1.2em;
 	margin: 0 0 0px 0;
 }
- 
+
+.scroll {
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+      overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    position: absolute;
+    top: 40px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+}
+
 /***************
  * Events-View *
  ***************/
@@ -114,23 +120,4 @@ a.box {
 #numbers-view ul li p {
 	display: inline-block;
 	min-width: 47%;
-}
-
-/*****************
- * Settings-View *
- *****************/
-
-/*************
- * Scrolling *
- *************/
-.scroll {
-    overflow: auto;
-    -webkit-overflow-scrolling: touch;
-      overflow: auto;
-    -webkit-overflow-scrolling: touch;
-    position: absolute;
-    top: 40px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
 }

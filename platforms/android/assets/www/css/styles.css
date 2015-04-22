@@ -11,32 +11,7 @@ html {
 
 body {
 	font-family: source-sans-pro, serif;
-	font-size: 16px;
-	margin: 0;
-	padding: 0;
-	height: 100%;
 	background-color: #DDDDDD;
-	overflow: hidden;
-	position: relative;
-}
-
-/*********
- * Table *
- *********/
-table {
-	width: 100%;
-	border-collapse: collapse;
-}
-
-table tr {
-}
-
-table tr td {
-	border: 1px solid #cccccc;
-}
-
-table tr th {
-	border: 1px solid #cccccc;
 }
 
 /**********
@@ -46,7 +21,7 @@ table tr th {
     margin: 0;
     padding: 0;
 	height: 39px;
-	background-color: #ffffff;
+	background-color: #FFFFFF;
 	border-bottom: #CCCCCC solid 1px;
 	text-align: justify;
 }
@@ -56,7 +31,7 @@ table tr th {
 }
 
 #header-frame header ul#menu li.line {
-	padding-left: 100%;
+	padding-left: 99%;
 }
 
 #header-frame header ul#menu li a img {
@@ -74,58 +49,13 @@ table tr th {
 	height: 100px;
 }
 
-/********
- * View *
- ********/
-.view {
-	.padding: 5px;
-} 
-
-/*************
- * Main-View *
- *************/
-#main-view nav ul {
-	text-align: center;
-	margin: 0;
-    padding: 0;
-    list-style: none;
-    background-color: #FFFFFF;
-}
-
-#main-view nav ul li {
-	float: left;
-    padding: 0;
-    margin: 20px;
-    display: box;
-    width: 80px;
-    height: 100px;
-    text-align: center;
-}
-
-#main-view nav ul li a, nav ul li a:visited {
-	font-size: 1em;
-	text-decoration: none;
-	color: #000000;
-}
-
-#main-view nav ul li img {
-	padding: 0;
-    margin: 0;
-    width: 80px;
-    height: 80px;
-}
-
 /***************
- * Events-View *
+ *     View    *
  ***************/
-#events-view ul li {
-}
-
-#events-view ul li a {
-	margin: 10px;
-	padding: 10px 10px 10px 10px;
+ .box {
+ 	margin: 5px;
+	padding: 10px;
 	background-color: #FFFFFF;
-	
 	display: block;
 	border: 1px solid #CCCCCC;
 	border-radius: 7px;
@@ -134,10 +64,30 @@ table tr th {
 	font-size: 0.9em;
 }
 
-#events-view ul li a h3 {
-	margin: 0px;
+a.box {
+	border-color: #888888;
 }
 
+.box h2 {
+	font-size: 1.2em;
+	margin: 0 0 0px 0;
+}
+
+.scroll {
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+      overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    position: absolute;
+    top: 40px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+}
+
+/***************
+ * Events-View *
+ ***************/
 #events-view ul li a p.time {
 	margin: 0px;
 	font-style: italic;
@@ -153,31 +103,8 @@ table tr th {
 /*************
  * News-View *
  *************/
-#news-view {
-	margin: 0px;
-	padding: 0px;
-}
-
-#news-view ul li {
-	border: 1px solid #CCCCCC;
-	border-radius: 7px;
-	background-color: #FFFFFF;
-	margin: 0 10px 10px 10px;
-	padding: 15px;
-	display: inline-block;
-}
-
-#news-view ul li:first-child {
-	margin-top: 10px;
-}
-
 #news-view ul li p {
 	margin: 15px 0 0 0;
-}
-
-#news-view ul li h2 {
-	font-size: 1.2em;
-	margin: 0 0 0px 0;
 }
 
 #news-view ul li p.date {
@@ -190,73 +117,7 @@ table tr th {
 /****************
  * Numbers-View *
  ****************/
-#numbers-view ul {
-	margin: 0px;
-}
-
-#numbers-view ul li {
-	border: 1px solid #CCCCCC;
-	border-radius: 7px;
-	background-color: #FFFFFF;
-	margin: 10px 10px 10px 10px;
-	padding: 15px;
-	
-	display: block;
- 	border-top: 1px solid #cccccc;
-	padding: 10px 10px 10px 10px;
-	text-decoration: none;
-	color: black;
-	font-size: 0.9em;
-}
-
-#numbers-view ul li h2 {
-	margin: 0px;
-	font-size: 1.2em;
-}
-
 #numbers-view ul li p {
-	display: inline;
-}
-
-#numbers-view ul li p:second-child {
-	margin-left: 10px;
-}
-/*****************
- * Settings-View *
- *****************/
-#settings-view ul {
-	margin: 0px;
-}
-
-#settings-view ul li a {
-	background-color: white;
-	display: block;
-	border-top: 1px solid #cccccc;
-	padding: 10px 10px 10px 10px;
-	text-decoration: none;
-	color: black;
-	font-size: 0.9em;
-}
-
-#settings-view ul li:first-child a {
-	border-top: 0px;
-}
-
-#settings-view ul li a h3 {
-	margin: 0px;
-}
-
-/*************
- * Scrolling *
- *************/
-.scroll {
-    overflow: auto;
-    -webkit-overflow-scrolling: touch;
-      overflow: auto;
-    -webkit-overflow-scrolling: touch;
-    position: absolute;
-    top: 40px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
+	display: inline-block;
+	min-width: 47%;
 }

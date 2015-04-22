@@ -2,6 +2,7 @@
 <head>
 	<title>SKVD App</title>
     <meta charset="utf-8">
+	<script src="lib/jquery-1.8.2.min.js"></script>
 	<script src="css/source-sans-pro.js"></script>
 	<link href="css/styles.css" rel="stylesheet">
 
@@ -16,7 +17,6 @@
 	<div id="header-frame"></div>
 	<div id="app-frame"></div>
 	
-	<script src="lib/jquery-1.8.2.min.js"></script>
 	<script id="header-tpl" type="text/x-handlebars-template">
 	<header>
 		<!--<div id="hash-track">
@@ -37,14 +37,14 @@
 		</ul>
 	</header>
 	</script>
-	
+		
 	<script id="events-view-tpl" type="text/x-handlebars-template">
-	<div id="events-view" class="view scroll">
+	<div id="events-view" class="scroll">
 		<ul>
 		{{#events}}
 				<li>
-					<a href="#events&{{id}}">
-						<h3>{{date}}</h3>
+					<a class="box" href="#events&{{id}}">
+						<h2>{{date}}</h2>
 						<p class="time">{{time}}</p>
 						<p class="name">{{name}}</p>
 					</a>
@@ -64,7 +64,7 @@
 	<div id="news-view" class="view scroll">
 		<ul>
       		{{#news}}
-			<li>
+			<li class="box">
 				<h2>{{title}}</h2>
 				<p class="date">{{date}} - {{time}}<p>
 				<p>{{{content}}}</p>
@@ -78,7 +78,7 @@
 	<div id="numbers-view" class="view scroll">
 			<ul>
 			{{#numbers}}
-				<li>				
+				<li class="box">				
 						<h2>{{name}}</h2>
 						{{#if phone }}
 							{{#if mobile }}
@@ -106,7 +106,7 @@
 			<ul>
 			{{#settings}}
 				<li>
-					<a href="#settings" onClick="{{onClick}}">
+					<a class="box" href="#settings" onClick="{{onClick}}">
 						<h3>{{title}}</h3>
 						{{text}}
 					</a>
