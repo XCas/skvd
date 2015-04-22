@@ -24,7 +24,6 @@ var EventsView = function() {
 		    var endtime = events["events"][i]["endtime"].split(":")[0] + ":" + events["events"][i]["endtime"].split(":")[1];
 		    
 		    var time = "";
-		    
 		    if ( starttime == "00:00" ) { 
 		    	time = "Uhrzeit unbekannt";
 		    }
@@ -34,10 +33,11 @@ var EventsView = function() {
 		    else {
 		    	time = starttime + " - " + endtime + " " + " Uhr";
 		    }
-		    
 		    events["events"][i]["time"] = time;
 		}
-		this.events = events;
+		if ( events != null ) {
+			this.events = events;
+		}	
 	};
 	
 	this.render = function() {

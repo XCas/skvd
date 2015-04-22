@@ -1,6 +1,7 @@
 <html>
 <head>
 	<title>SKVD App</title>
+    <meta charset="utf-8">
 	<script src="css/source-sans-pro.js"></script>
 	<link href="css/styles.css" rel="stylesheet">
 
@@ -15,6 +16,7 @@
 	<div id="header-frame"></div>
 	<div id="app-frame"></div>
 	
+	<script src="lib/jquery-1.8.2.min.js"></script>
 	<script id="header-tpl" type="text/x-handlebars-template">
 	<header>
 		<!--<div id="hash-track">
@@ -41,7 +43,7 @@
 		<ul>
 		{{#events}}
 				<li>
-					<a href="#events">
+					<a href="#events&{{id}}">
 						<h3>{{date}}</h3>
 						<p class="time">{{time}}</p>
 						<p class="name">{{name}}</p>
@@ -52,12 +54,19 @@
 	</div>
 	</script>
 	
+	<script id="single-event-view-tpl" type="text/x-handlebars-template">
+	<div id="single-event-view" class="view scroll">
+		event
+	</div>
+	</script>
+	
 	<script id="news-view-tpl" type="text/x-handlebars-template">
 	<div id="news-view" class="view scroll">
 		<ul>
       		{{#news}}
 			<li>
 				<h2>{{title}}</h2>
+				<p class="date">{{date}} - {{time}}<p>
 				<p>{{{content}}}</p>
 				{{/news}}
 			</li>
@@ -69,39 +78,27 @@
 	<div id="numbers-view" class="view scroll">
 			<ul>
 			{{#numbers}}
-				<li>
-					<a href="#numbers">
-						<h3>{{name}}</h3>
+				<li>				
+						<h2>{{name}}</h2>
 						{{#if phone }}
 							{{#if mobile }}
-								{{phone}} / {{mobile}}
+								<p>☎ <a href="tel:{{phone}}">{{phone}}</a></p>
+								<p><img src="img/mobile_phone_icon.png"> <a href="tel:{{mobile}}">{{mobile}}</a></p>
 							{{else}}
-								{{phone}}
+								<p>☎ <a href="tel:{{phone}}">{{phone}}</a></p>
 							{{/if}}
 						{{else}}
-							{{mobile}}
+							<p><img src="img/mobile_phone_icon.png"> <a href="tel:{{mobile}}">{{mobile}}</a></p>
 						{{/if}}
-					</a>
+					
 				</li>
 			{{/numbers}}
 			<ul>
 	</div>
 	</script>
 
-	<script id="number-view-tpl" type="text/x-handlebars-template">
-	<div id="numbers-view" class="view scroll">
-		<table id="numbers">
-			<tr><th>Name</th><th>Telefon</th><th>Mobil</th></tr>
-			{{#numbers}}
-			<tr>
-
-				<td>{{name}}</td>
-				<td><a rel="external" target="_webapp" href="tel:{{phone}}">{{phone}}</a></td>
-				<td><a rel="external" target="_system" href="tel:{{mobile}}">{{mobile}}</a></td>
-			</tr>
-			{{/numbers}}
-		</table>
-	</div>
+	<script id="single-number-view-tpl" type="text/x-handlebars-template">
+		number
 	</script>
 
 	<script id="settings-view-tpl" type="text/x-handlebars-template">
