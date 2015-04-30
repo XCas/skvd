@@ -55,8 +55,26 @@
 	</script>
 	
 	<script id="single-event-view-tpl" type="text/x-handlebars-template">
-	<div id="single-event-view" class="view scroll">
-		event
+	<div id="single-event-view" class="scroll box">
+		<h2>{{name}}</h2>
+
+		<p><strong>Datum</strong>
+			<br />{{date}}
+		</p>
+
+		<p><strong>Uhrzeit</strong>
+			<br />{{time}}
+		</p>
+
+		<p><strong>Ort</strong>
+			<br />{{location}}
+			<br />{{address}}
+			<br />{{postcode}} {{town}}
+		</p>
+
+		<p><strong>Google-Maps</strong>
+			<br /><a href="geo:maps.google.com/maps?q={{address}},{{postcode}},{{town}}">Hier klicken für GoogleMaps</a>
+		</p>
 	</div>
 	</script>
 	
@@ -97,20 +115,23 @@
 	</div>
 	</script>
 
-	<script id="single-number-view-tpl" type="text/x-handlebars-template">
-		number
-	</script>
-
 	<script id="settings-view-tpl" type="text/x-handlebars-template">
 		<div id="settings-view" class="view scroll">
 			<ul>
 			{{#settings}}
-				<li>
-					<a class="box" href="#settings" onClick="{{onClick}}">
+				{{#if href }}
+					<li>
+						<a class="box" href="{{href}}" onClick="{{onClick}}">
+							<h3>{{title}}</h3>
+							{{{text}}}
+						</a>
+					</li>
+				{{else}}
+					<li class="box">
 						<h3>{{title}}</h3>
-						{{text}}
-					</a>
-				</li>
+						{{{text}}}
+					</li>
+				{{/if}}
 			{{/settings}}
 			<ul>
 		</div>

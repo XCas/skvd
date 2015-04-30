@@ -68,4 +68,6 @@
     <gap:splash gap:platform="winphone" src="www/res/screen/windows-phone/screen-portrait.jpg" />
     <access origin="https://app.schalmeien-dudweiler.de/api/" />
 	<access origin="tel:*" launch-external="yes" />
+	<access origin="geo:*" launch-external="yes"/>
+	<access origin="mailto:*" launch-external="yes"/>	
 </widget>
