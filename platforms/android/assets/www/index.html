@@ -19,19 +19,13 @@
 	
 	<script id="header-tpl" type="text/x-handlebars-template">
 	<header>
-		<!--<div id="hash-track">
-
-		{{#if hashh}}
-				<a href="#"><img src="img/back.png" onClick="history.go(-1);navigator.app.backHistory();"></a>
-		{{else}}
-				&nbsp;
-		{{/if}}
-		</div>
-		-->
-
 		<ul id="menu">
 	      	{{#menu}}
-				<li><a href="{{ahref}}"><img src="img/{{imgsrc}}.png"></a></li>
+				{{#if back}}
+					<li><a href="#" onClick="history.go(-1);navigator.app.backHistory();"><img src="img/{{imgsrc}}.png"></a></li>
+				{{else}}
+					<li><a href="{{ahref}}"><img src="img/{{imgsrc}}.png"></a></li>
+				{{/if}}
 			{{/menu}}
 			<li class="line">&nbsp;</li>
 		</ul>
@@ -72,8 +66,8 @@
 			<br />{{postcode}} {{town}}
 		</p>
 
-		<p><strong>Google-Maps</strong>
-			<br /><a href="geo:maps.google.com/maps?q={{address}},{{postcode}},{{town}}">Hier klicken für GoogleMaps</a>
+		<p><strong>Navigation starten</strong>
+			<br /><a href="geo:{{address}},{{postcode}},{{town}}"><img src="img/map.png"></a>
 		</p>
 	</div>
 	</script>
@@ -137,6 +131,23 @@
 		</div>
 	</script>
 
+	<script id="settings-intern-view-tpl" type="text/x-handlebars-template">
+		<div id="intern-view" class="view scroll box">
+			<p><strong>Gib hier bitte das Passwort ein:</strong></p> 
+			<form>
+				<fieldset>
+					<input id="keyinput" name="keyinput" type="password"/>
+					<input type="button" value="Speichern" onClick="SettingsView.btnInternPasswordSaveClick();" />
+					<input type="button" value="Abbrechen" onClick="SettingsView.btnInternPasswordCancelClick();" />
+				</fieldset>
+			</form>
+			<p>Diese Funktion ist ausschließlich für die aktiven Schalodris der Schalmeienkapelle gedacht.</p>
+			<p>Aber kein Problem, du darfst gerne ein Instrument erlernen und ein Schalodri werden!</p>
+			<p>Besuch uns doch einfach mal an einem Donnerstag in der Probe. Immer ab 18:30 Uhr im Keller der Turmschule in Dudweiler.</p>
+		</div>
+	</script>
+	
+	
 	<script id="settings-view-tpl-alt" type="text/x-handlebars-template">	
 	<div id="settings-view" class="view scroll">
 

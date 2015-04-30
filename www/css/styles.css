@@ -107,6 +107,10 @@ a.box {
 	margin: 10px 0 0 0;
 }
 
+#single-event-view p a img {
+	margin: 10px;
+}
+
 
 /*************
  * News-View *
@@ -128,4 +132,23 @@ a.box {
 #numbers-view ul li p {
 	display: inline-block;
 	min-width: 47%;
+}
+
+
+/************************
+ * Settings-Intern-View *
+ ************************/
+#intern-view p {
+	margin: 10px;
+	text-align: center;
+	font-size: 1.1em;
+}
+
+#intern-view form fieldset input {
+	display: block;
+	margin: 10px;
+	border: 1px solid #CCCCCC;
+	font-size: 1.3em;
+	width: 93%;
+	height: 50px;
 }

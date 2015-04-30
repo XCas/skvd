@@ -6,6 +6,8 @@ var Header = function() {
 	};
 	
 	this.render = function(hash) {
+		var backbutton	    = {"imgsrc":"back", "back":"true"};
+		
 		var eventsbutton    = {"imgsrc":"events", "ahref":"#events"};
 		var newsbutton      = {"imgsrc":"news", "ahref":"#news"};
 		var numbersbutton   = {"imgsrc":"phone", "ahref":"#numbers"};
@@ -24,7 +26,10 @@ var Header = function() {
 			var settingsbutton  = {"imgsrc":"gear-active", "ahref":"#settings"};
 		}
 
-		if ( window.localStorage.getItem("numbers") == "\"authentication failed\"" ) {
+		if (hash.match("&")) {
+			this.menu = {"menu":[backbutton, settingsbutton]};
+		}
+		else if ( window.localStorage.getItem("numbers") == "\"authentication failed\"" ) {
 			this.menu = {"menu":[eventsbutton, newsbutton, settingsbutton]};
 		}		
 		else {

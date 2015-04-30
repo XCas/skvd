@@ -55,8 +55,15 @@ var SKVDApp = function() {
 	    else if (hash.match(this.settingsURL)) {
 	    	var sv = new SettingsView();
 	    	sv.initialize();
-	    	$("#app-frame").html(sv.render());
-	    }
+	    	
+	    	if ( hash.match("&") ) {
+	    		var action = hash.split("&")[1];
+		    	$("#app-frame").html(sv.render(action));
+	    	}
+	    	else {
+		    	$("#app-frame").html(sv.render(""));
+	    	}
+	   }
 	};
 };
 
