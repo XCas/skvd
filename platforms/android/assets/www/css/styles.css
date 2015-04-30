@@ -65,7 +65,7 @@ body {
 }
 
 a.box {
-	border-color: #888888;
+	border-color: #AA8888;
 }
 
 .box h2 {
@@ -99,6 +99,14 @@ a.box {
 	color: #3333FF;
 	font-weight: bold;
 }
+
+/*********************
+ * Single-Event-View *
+ *********************/
+#single-event-view p {
+	margin: 10px 0 0 0;
+}
+
 
 /*************
  * News-View *

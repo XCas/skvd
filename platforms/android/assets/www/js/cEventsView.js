@@ -3,7 +3,6 @@ var EventsView = function() {
 
 	this.initialize = function() {
 		events = JSON.parse(window.localStorage.getItem("events"));
-
 		for (var i=0; i<events["events"].length; i++) {
 		    var dt = new Date(events["events"][i]["startdate"]);
 		    
@@ -40,9 +39,38 @@ var EventsView = function() {
 		}	
 	};
 	
-	this.render = function() {
-	    var source   = $("#events-view-tpl").html();
-	    var template = Handlebars.compile(source);
-	    return template(this.events);
+	this.getElementByID = function(id) {
+		var event = "";
+		for (var i=0; i<events["events"].length; i++) {
+			if ( events["events"][i]["id"] == id )
+				event = events["events"][i];
+		}
+		console.debug(event);
+		return event;
+	}
+	
+	this.render = function(id) {
+		if ( id == -1 ) {
+		    var source   = $("#events-view-tpl").html();
+		    var template = Handlebars.compile(source);
+		    return template(this.events);
+		}
+		else {
+		    var source   = $("#single-event-view-tpl").html();
+		    var template = Handlebars.compile(source);
+		    return template(this.getElementByID(id));			
+		}
 	};
 };
+
+
+
+
+
+
+
+
+
+
+
+
