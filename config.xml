@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="de.schalmeien-dudweiler.app" version="2.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+<widget id="de.schalmeien-dudweiler.app" version="2.1.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>SKVD</name>
     <description>
-        Die SKVD Schalodri-App
+        Offizielle SKVD App
     </description>
     <author email="UCas@UCasLife.de" href="http://ucaslife.de">
         Uwe Caspari
