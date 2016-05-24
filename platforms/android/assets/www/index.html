@@ -1,0 +1,209 @@
+<html>
+<head>
+	<title>SKVD App</title>
+    <meta charset="utf-8">
+	<script src="lib/jquery-1.8.2.min.js"></script>
+	<script src="css/source-sans-pro.js"></script>
+	<link href="css/styles.css" rel="stylesheet">
+
+	<script type="text/javascript">
+		$(document).bind("mobileinit", function() {
+		    $.support.cors = true;
+		    $.mobile.allowCrossDomainPages = true;
+		});
+	</script>
+</head>
+<body>
+	<div id="header-frame"></div>
+	<div id="app-frame"></div>
+	
+	<script id="header-tpl" type="text/x-handlebars-template">
+	<header>
+		<ul id="menu">
+	      	{{#menu}}
+				{{#if back}}
+					<li><a href="#" onClick="history.go(-1);navigator.app.backHistory();"><img src="img/{{imgsrc}}.png"></a></li>
+				{{else}}
+					<li><a href="{{ahref}}"><img src="img/{{imgsrc}}.png"></a></li>
+				{{/if}}
+			{{/menu}}
+			<li class="line">&nbsp;</li>
+		</ul>
+	</header>
+	</script>
+		
+	<script id="events-view-tpl" type="text/x-handlebars-template">
+	<div id="events-view" class="scroll">
+		<ul>
+		{{#events}}
+				<li>
+					<a class="box" href="#events&{{id}}">
+						<h2>{{date}}</h2>
+						<p class="time">{{time}}</p>
+						<p class="name">{{name}}</p>
+					</a>
+				</li>
+		{{/events}}
+		</ul>
+	</div>
+	</script>
+	
+	<script id="single-event-view-tpl" type="text/x-handlebars-template">
+	<div id="single-event-view" class="scroll box">
+		<h2>{{name}}</h2>
+
+		<p><strong>Datum</strong>
+			<br />{{date}}
+		</p>
+
+		<p><strong>Uhrzeit</strong>
+			<br />{{time}}
+		</p>
+
+		<p><strong>Ort</strong>
+			<br />{{location}}
+			<br />{{address}}
+			<br />{{postcode}} {{town}}
+		</p>
+
+		<p><strong>Navigation starten</strong>
+			<br /><a href="geo:0,0?q={{address}},{{postcode}},{{town}}"><img src="img/map.png"></a>
+		</p>
+
+		{{#if content}}
+		<p><strong>Beschreibung</strong>
+			<br />{{{content}}}
+		</p>
+		{{/if}}
+	</div>
+	</script>
+	
+	<script id="news-view-tpl" type="text/x-handlebars-template">
+	<div id="news-view" class="view scroll">
+		<ul>
+      		{{#news}}
+			<li class="box">
+				<h2>{{title}}</h2>
+				<p class="date">{{date}} - {{time}} - <a target="_blank" href="{{guid}}">Im Browser öffnen</a><p>
+				<p>{{{content}}}</p>
+				{{/news}}
+			</li>
+		</ul>
+	</div>
+	</script>
+
+	<script id="numbers-view-tpl" type="text/x-handlebars-template">
+	<div id="numbers-view" class="view scroll">
+			<ul>
+			{{#numbers}}
+				<li class="box">
+						
+				
+						<h2>{{name}}</h2> 
+
+						{{#if birthday }}
+							<p class="birthday">{{birthday}}</p>
+						{{/if}}
+						<br/>
+						{{#if phone }}
+							<p class="phone">☎ <a href="tel:{{phone}}">{{phone}}</a></p>
+						{{/if}}
+
+						{{#if mobile }}
+							<p class="mobile"><img src="img/mobile_phone_icon.png"> <a href="tel:{{mobile}}">{{mobile}}</a></p>
+						{{/if}}
+				</li>
+			{{/numbers}}
+			<ul>
+	</div>
+	</script>
+
+	<script id="settings-view-tpl" type="text/x-handlebars-template">
+		<div id="settings-view" class="view scroll">
+			<ul>
+			{{#settings}}
+				{{#if href }}
+					<li>
+						<a class="box" href="{{href}}" onClick="{{onClick}}">
+							<h3>{{title}}</h3>
+							{{{text}}}
+						</a>
+					</li>
+				{{else}}
+					<li class="box">
+						<h3>{{title}}</h3>
+						{{{text}}}
+					</li>
+				{{/if}}
+			{{/settings}}
+			<ul>
+		</div>
+	</script>
+
+	<script id="settings-intern-view-tpl" type="text/x-handlebars-template">
+		<div id="intern-view" class="view scroll box">
+			<p><strong>Gib hier bitte das Passwort ein:</strong></p> 
+			<form>
+				<fieldset>
+					<input id="keyinput" name="keyinput" type="password"/>
+					<input type="button" value="Speichern" onClick="SettingsView.btnInternPasswordSaveClick();" />
+					<input type="button" value="Abbrechen" onClick="SettingsView.btnInternPasswordCancelClick();" />
+				</fieldset>
+			</form>
+			<p>Diese Funktion ist ausschließlich für die aktiven Mitglieder des Vereins gedacht.
+				Aber kein Problem, du darfst gerne ein Instrument erlernen und ein Schalodri werden!</p>
+			<p>Besuch uns doch einfach mal an einem Donnerstag in der Probe. Immer ab 18:30 Uhr im Keller der Turmschule in Dudweiler.</p>
+		</div>
+	</script>
+	
+	
+	<script id="settings-view-tpl-alt" type="text/x-handlebars-template">	
+	<div id="settings-view" class="view scroll">
+
+		<h2>Schalmeien- und Kulturverein<br />Dudweiler e.V.</h2>
+		<p>Lizenz: <a target="_blank" href="http://www.gnu.de/documents/gpl.de.html">GNU GPL</a>
+		<br/>Autor: <a target="_blank" href="http://ucaslife.de">Uwe Caspari</a> (<a href="mailto:UCas@UCasLife.de">UCas@UCasLife.de</a>)</p>
+		
+		<h2>SKVD Intern</h2>
+		<form>
+			<fieldset>
+				<input id="keyinput" name="keyinput" type="password"/>
+				<input type="button" value="Speichern" onClick="SettingsView.btnInternPasswordSaveClick();" />
+			</fieldset>
+		</form>
+		<p id="msg">
+		</p>
+
+		<h2>Synchronisieren</h2>
+		<form>
+			<fieldset>
+				<input type="button" value="Sync" onClick="SettingsView.btnSyncClick();" />
+			</fieldset>
+		</form>
+
+		<h2>Update</h2>
+		<p><a target="_blank" href="https://build.phonegap.com/apps/1392802/share">Hier klicken um die aktuelle App herunter zu laden</a></p>
+	</div>
+	</script>
+	
+	<!-- Javascript Libraries -->
+	<script src="lib/jquery-1.8.2.min.js"></script>
+	<script src="lib/handlebars.js"></script>
+	<script src="lib/fastclick.js"></script>
+	<script src="cordova.js"></script>
+	
+	<!-- Data Connector -->
+	<script src="js/cData.js"></script>
+
+	<!-- App-Classes -->
+	<script src="js/cSettingsView.js"></script>
+	<script src="js/cEventsView.js"></script>
+	<script src="js/cNewsView.js"></script>
+	<script src="js/cNumbersView.js"></script>
+	<script src="js/cMainView.js"></script>
+	<script src="js/cHeader.js"></script>
+	
+	<!-- Start app -->
+	<script src="js/cApp.js"></script>
+</body>
+</html>
