@@ -10,6 +10,9 @@
 - Added club-url to settings
 - Added description to single-events
 - Rearranged numbers
+- Repairing crash in case of missing server-connection
+- Adding error-sheets in case of missing server-connection
+- Adding "no planned events"-sheet
  
 * V2.0.1 - 2015-04-30
 - Bugfix: Geo-URL did not work in single events

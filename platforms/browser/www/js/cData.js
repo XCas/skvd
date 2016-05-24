@@ -10,19 +10,20 @@ var Data = function() {
 	    this.getObjectFromWebService("numbers", this.key);
 	}
 
-	this.getObjectFromWebService = function( object, key ) {		
+	this.getObjectFromWebService = function( object, key) {		
 		$.ajax({
 		    url: this.url,
 		    dataType: 'text',
 		    type: 'GET',
-		    data: { get: object, key: key },
+	        async: false,
+	        data: { get: object, key: key },
 		    crossDomain: true,
 		    success: function( data ) {
 		    	data = data.trim();
 		    	window.localStorage.setItem(object, data);
 		    },
 		    error: function (xhr, ajaxOptions, thrownError) {
-		    	alert(JSON.stringify(xhr) + " ; " + JSON.stringify(ajaxOptions) + " ; " + JSON.stringify(thrownError));
+		    	//alert("Folgender Fehler ist aufgetreten: " + JSON.stringify(xhr) + " ; " + JSON.stringify(ajaxOptions) + " ; " + JSON.stringify(thrownError));
 		    } 
 		});
 	};

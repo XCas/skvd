@@ -29,7 +29,7 @@ var Header = function() {
 		if (hash.match("&")) {
 			this.menu = {"menu":[backbutton, settingsbutton]};
 		}
-		else if ( window.localStorage.getItem("numbers") == "\"authentication failed\"" ) {
+		else if ( ( window.localStorage.getItem("numbers") == "" ) || ( window.localStorage.getItem("numbers") == null ) || ( window.localStorage.getItem("numbers") == "\"authentication failed\"" ) ) {
 			this.menu = {"menu":[eventsbutton, newsbutton, settingsbutton]};
 		}		
 		else {

@@ -27,11 +27,13 @@ var SKVDApp = function() {
 	    $("#header-frame").html(header.render(hash));
 	    
 	    if (!hash) { // If there is no hash, just assume the eventspage is chosen. (defaultpage)
-			window.location.hash = this.eventsURL;
+	    	hash = this.eventsURL;
+	    	window.location.hash = this.eventsURL;
 	    }
 	    
-	    if (hash.match(this.eventsURL)) {
-	    	var ev = new EventsView();
+    	if (hash.match(this.eventsURL)) {
+    		var ev = new EventsView();
+	    	
 	    	ev.initialize();
 	    	
 	    	if ( hash.match("&") ) {
@@ -41,8 +43,8 @@ var SKVDApp = function() {
 	    	else {
 		    	$("#app-frame").html(ev.render(-1));
 	    	}
-	    }
-	    else if (hash.match(this.newsURL)) {
+		}
+    	else if (hash.match(this.newsURL)) {
 	    	var nv = new NewsView();
 	    	nv.initialize();
 	    	$("#app-frame").html(nv.render());

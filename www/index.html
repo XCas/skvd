@@ -32,17 +32,25 @@
 	</header>
 	</script>
 		
+	<script id="events-view-empty-tpl" type="text/x-handlebars-template">
+	<div id="single-event-view" class="scroll box">
+		<h2>Zur Zeit keine Termine</h2>
+		<p>Wie es aussieht, stehen aktuell keine Termine im Terminkalender.</p>
+		<p>Komm später wieder, vielleicht gibt es dann etwas neues.</p>
+	</div>
+	</script>
+	
 	<script id="events-view-tpl" type="text/x-handlebars-template">
 	<div id="events-view" class="scroll">
 		<ul>
 		{{#events}}
-				<li>
-					<a class="box" href="#events&{{id}}">
-						<h2>{{date}}</h2>
-						<p class="time">{{time}}</p>
-						<p class="name">{{name}}</p>
-					</a>
-				</li>
+			<li>
+				<a class="box" href="#events&{{id}}">
+					<h2>{{date}}</h2>
+					<p class="time">{{time}}</p>
+					<p class="name">{{name}}</p>
+				</a>
+			</li>
 		{{/events}}
 		</ul>
 	</div>
@@ -186,6 +194,16 @@
 	</div>
 	</script>
 	
+	<script id="error-view-tpl" type="text/x-handlebars-template">
+	<div id="single-event-view" class="scroll box">
+		<h2>Verbindungsfehler</h2>
+		<p>Da ist wohl was schief gelaufen, sorry!</p>
+		<p>Offensichtlich konnten keine Daten vom Server geladen werden. Versuche es später noch einmal, indem du die App einmal schließt und neu öffnest, oder in den Einstellungen den "Synchronisieren"-Knopf verwendest.</p>
+		<p>Falls der Fehler weiterhin auftritt, wende dich an <a href="mailto:UCas@UCasLife.de">UCas@UCasLife.de</a></p>
+	</div>
+	</script>
+	
+	
 	<!-- Javascript Libraries -->
 	<script src="lib/jquery-1.8.2.min.js"></script>
 	<script src="lib/handlebars.js"></script>
@@ -200,7 +218,7 @@
 	<script src="js/cEventsView.js"></script>
 	<script src="js/cNewsView.js"></script>
 	<script src="js/cNumbersView.js"></script>
-	<script src="js/cMainView.js"></script>
+	<!-- <script src="js/cMainView.js"></script> -->
 	<script src="js/cHeader.js"></script>
 	
 	<!-- Start app -->
