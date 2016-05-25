@@ -2,8 +2,12 @@ var EventsView = function() {
 	this.events = null;
 
 	this.initialize = function() {
-    	events = JSON.parse(window.localStorage.getItem("events"));
-    	
+	    try {
+	    	events = JSON.parse(window.localStorage.getItem("events"));
+		} catch (e) {
+			events = null;
+		}
+		
 		if ( events != null ) {
 			if ( events["events"] != null ) {
 				for (var i=0; i<events["events"].length; i++) {

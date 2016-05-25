@@ -2,7 +2,11 @@ var NewsView = function() {
 	this.news = null;
 		
 	this.initialize = function() {
-		news = JSON.parse(window.localStorage.getItem("news"));
+		try {
+			news = JSON.parse(window.localStorage.getItem("news"));
+		} catch (e) {
+			news = null;
+		}
 		
 		if ( news != null ) {
 			if ( news["news"] != null ) {

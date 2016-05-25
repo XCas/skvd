@@ -17,7 +17,7 @@
        under the License.
  */
 
-package de.schalmeien.dudweiler.app;
+package de.schalmeien_dudweiler.app;
 
 import android.os.Bundle;
 import org.apache.cordova.*;

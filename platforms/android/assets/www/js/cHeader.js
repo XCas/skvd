@@ -13,6 +13,18 @@ var Header = function() {
 		var numbersbutton   = {"imgsrc":"phone", "ahref":"#numbers"};
 		var settingsbutton  = {"imgsrc":"gear", "ahref":"#settings"};
 		
+		try {
+	    	events = JSON.parse(window.localStorage.getItem("events"));
+		} catch (e) {
+			events = null;
+		} finally {
+			if ( ( window.localStorage.getItem("numbers") == "" )
+					|| ( window.localStorage.getItem("numbers") == null )
+					|| ( window.localStorage.getItem("numbers") == "\"authentication failed\"" ) ) {
+				events = null;
+			}
+		}
+		
 		if ( hash.match("#events") ) {
 			var eventsbutton    = {"imgsrc":"events-active", "ahref":"#events"};
 		}
@@ -29,7 +41,7 @@ var Header = function() {
 		if (hash.match("&")) {
 			this.menu = {"menu":[backbutton, settingsbutton]};
 		}
-		else if ( ( window.localStorage.getItem("numbers") == "" ) || ( window.localStorage.getItem("numbers") == null ) || ( window.localStorage.getItem("numbers") == "\"authentication failed\"" ) ) {
+		else if ( events == null ) {
 			this.menu = {"menu":[eventsbutton, newsbutton, settingsbutton]};
 		}		
 		else {
