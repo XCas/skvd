@@ -42,10 +42,45 @@ var NewsView = function() {
 				    // Remove Images
 				    
 				    var contentString = news["news"][i]["content"];
-				    contentString = contentString.replace(/\<img.*>/g, "$REMOVED$");
-				    contentString = contentString.replace(/\[caption.*caption\]/g, "$REMOVED$");
-				    contentString = contentString.replace("$REMOVED$", "<strong>[Bild]</strong>");
 				    
+					/**
+				     * Remove Images with Caption
+				    */
+				    contentString = contentString.replace(/\[caption/g, "[MAKEASPLIT][caption");
+				    contentStringArray = contentString.split("[MAKEASPLIT]");
+				    
+				    contentString = "";
+					contentStringArray.forEach(function(entry) {
+						entry = entry.replace(/\[caption.*caption\]/g, "<a class=\"box removed\" target=\"_blank\" href=\"" + news["news"][i]["guid"] + "\">Hier wurde ein Foto ausgeblendet um dir Datenvolumen zu sparen.<br />Tippe hier, um den vollständigen Artikel im Browser zu öffnen.</a>");
+    					contentString = contentString + entry;
+					});
+
+
+					/**
+				     * Remove Images with manual remove tag
+				    */
+				    contentString = contentString.replace(/\<\!--imgremoveinapp--\>/g, "[MAKEASPLIT]<!--imgremoveinapp-->");
+				    contentStringArray = contentString.split("[MAKEASPLIT]");
+				    
+				    contentString = "";
+					contentStringArray.forEach(function(entry) {
+						entry = entry.replace(/\<\!--imgremoveinapp--\>.*\<\!--endimgremoveinapp--\>/g, "<a class=\"box removed\" target=\"_blank\" href=\"" + news["news"][i]["guid"] + "\">Hier wurde ein Foto ausgeblendet um dir Datenvolumen zu sparen.<br />Tippe hier, um den vollständigen Artikel im Browser zu öffnen.</a>");
+    					contentString = contentString + entry;
+					});
+
+					
+				    /**
+				     * Replace Youtube Iframes
+				    */
+				    contentString = contentString.replace(/\<iframe/g, "[MAKEASPLIT]<iframe");
+				    contentStringArray = contentString.split("[MAKEASPLIT]");
+				    
+				    contentString = "";
+					contentStringArray.forEach(function(entry) {
+						entry = entry.replace(/\<iframe.*iframe>/g, "<a class=\"box removed\" target=\"_blank\" href=\"" + news["news"][i]["guid"] + "\">Hier wurde ein Video ausgeblendet um dir Datenvolumen zu sparen. <br />Tippe hier, um den vollständigen Artikel im Browser zu öffnen.</a>");
+    					contentString = contentString + entry;
+					});
+
 				    news["news"][i]["content"] = contentString;
 				}		
 			}

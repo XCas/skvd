@@ -6,12 +6,13 @@ var SKVDApp = function() {
 	
 	this.initialize = function() {
 	    var self = this;
-
+		
 	    FastClick.attach(document.body);
 
 	    this.registerEvents();
 	    this.eventsURL = "#events";
 	    this.newsURL = "#news";
+	    this.notevaultURL = "#notevault";
 	    this.numbersURL = "#numbers";
 	    this.settingsURL = "#settings";
 	    
@@ -19,7 +20,7 @@ var SKVDApp = function() {
 	    this.data.initialize();
 	};
 	
-	this.render = function () {
+	this.render = function () {		
 		var self = this;
 	    var hash = window.location.hash;
 	    
@@ -33,7 +34,6 @@ var SKVDApp = function() {
 	    
     	if (hash.match(this.eventsURL)) {
     		var ev = new EventsView();
-	    	
 	    	ev.initialize();
 	    	
 	    	if ( hash.match("&") ) {
@@ -49,6 +49,32 @@ var SKVDApp = function() {
 	    	nv.initialize();
 	    	$("#app-frame").html(nv.render());
 	    }
+	    
+	    
+    	if (hash.match(this.notevaultURL)) {
+    		var notevault = new NotevaultView();
+	    	notevault.initialize();
+	    	
+	   		if ( hash.match("&") ) {
+	    		var hashsplit = hash.split("&");
+	    		switch ( hashsplit.length ) {
+	    			case 2:
+	    				$("#app-frame").html(notevault.render(2, hashsplit[1] ) );
+	    				break;
+	    			case 3:
+	    				$("#app-frame").html(notevault.render(3, hashsplit[1], hashsplit[2] ) );
+	    				break;
+	    			case 4:
+	    				$("#app-frame").html(notevault.render(4, hashsplit[1], hashsplit[2], hashsplit[3] ) );
+	    				break;
+	    		}
+			} else {
+				$("#app-frame").html(notevault.render(1));
+	    	}
+	    	
+		}
+		
+		
 	    else if (hash.match(this.numbersURL)) {
 	    	var nuv = new NumbersView();
 	    	nuv.initialize();
@@ -56,13 +82,14 @@ var SKVDApp = function() {
 	    }
 	    else if (hash.match(this.settingsURL)) {
 	    	var sv = new SettingsView();
-	    	sv.initialize();
 	    	
 	    	if ( hash.match("&") ) {
 	    		var action = hash.split("&")[1];
+		    	sv.initialize(action);
 		    	$("#app-frame").html(sv.render(action));
 	    	}
 	    	else {
+		    	sv.initialize("");
 		    	$("#app-frame").html(sv.render(""));
 	    	}
 	   }

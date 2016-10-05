@@ -1,0 +1,42 @@
+*********************************
+*	SKVD e.V. - App		*
+*********************************
+
+* V2.2.0 - 2016-10-04
+- Added Notevault
+- Added new loginfeedback
+- Added versionlog in settings
+- Added new remove routine for images and videos in news
+- Added new header color scheme
+- Added new icon
+- Bugfix: Loginform was not properly shown on mobile browsers
+- Bugfix: Sizes were not correct in mobile browsers
+- Bugfix: Back-Button did not work correctly in browsers
+
+* V2.1.0 - 2016-05-23
+- Added weblink to news
+- Removed images from news
+- Added day of birth to numbers
+- Added version info to settings
+- Added club-url to settings
+- Added description to single-events
+- Rearranged numbers
+- Repairing crash in case of missing server-connection
+- Adding error-sheets in case of missing server-connection
+- Adding "no planned events"-sheet
+ 
+* V2.0.1 - 2015-04-30
+- Bugfix: Geo-URL did not work in single events
+
+* V2.0.0 - 2015-04-30
+- Complete redesign, including:
+	- New UI concept
+	- Geo-URL in single events
+	- New events view
+
+* V1.0.0 - 2015-04-07
+- First try with a working app including:
+	- Events
+	- News
+	- Numbers
+	- Settings

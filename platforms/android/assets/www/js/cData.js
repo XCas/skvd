@@ -8,9 +8,10 @@ var Data = function() {
 	    this.getObjectFromWebService("events");
 	    this.getObjectFromWebService("news");
 	    this.getObjectFromWebService("numbers", this.key);
+	    this.getObjectFromWebService("notevault", this.key);
 	}
 
-	this.getObjectFromWebService = function( object, key) {		
+	this.getObjectFromWebService = function( object, key ) {		
 		$.ajax({
 		    url: this.url,
 		    dataType: 'text',

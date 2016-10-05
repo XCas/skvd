@@ -61,7 +61,7 @@ var EventsView = function() {
 		    var template = Handlebars.compile(source);
 		    return template();
 		}
-		else if ( this.events["events"] == null ) {
+		else if ( this.events["events"] === null ) {
 		    var source   = $("#events-view-empty-tpl").html();
 		    var template = Handlebars.compile(source);
 		    return template();

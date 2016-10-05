@@ -1,88 +1,118 @@
 * {
-	margin: 0px;
-	padding: 0px;
+	margin: 0;
+	padding: 0;
 	border: 0;
 }
 
-html {
-	height: 100%;
-	width: 100%;
+@media all and (min-width: 1000px) {
+	.container {
+		margin: auto;
+		width: 600px;
+	}
 }
+
+html {
+	font-size: 1.2em;
+}
+
+.box {
+	background-color: #FFFFFF;
+	display: block;
+	text-decoration: none;
+	color: black;
+	font-size: 0.9em;
+	margin: 2% 0 2% 0;
+	padding: 3%;
+}
+
+a.box {
+	border-right: 7px solid #800032;
+}
+
+.note {
+	font-style: italic;
+	text-align: center;
+}
+
+.notify {
+	font-style: italic;
+	text-align: center;
+	border-color: #CC0000;
+	background-color: #FFF9F9;
+}
+
+audio {
+	margin: auto;
+	width: 95%;	
+	display: block;
+}
+
+#scrollcontainer {
+   overflow: auto;
+    height: 91%;
+    -webkit-overflow-scrolling: touch;
+}
+
+h2 {
+	font-size: 1.2em;
+}
+
+
+h3 {
+	font-size: 1em;
+	margin-top: 1em;
+}
+
+
 
 body {
 	font-family: source-sans-pro, serif;
 	background-color: #DDDDDD;
 }
 
+ul {
+	margin-left: 1em;
+}
+
+ul.nolist {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
 /**********
  * Header *
  **********/
-#header-frame header ul#menu {
+#header-frame header {
     margin: 0;
     padding: 0;
-	height: 39px;
-	background-color: #FFFFFF;
+	background-color: #800032; /*Bordeaux*/
 	border-bottom: #CCCCCC solid 1px;
-	text-align: justify;
 }
 
+#header-frame header ul#menu {
+	text-align: justify;
+}
+@media all and (max-width: 1000px) {
+	#header-frame header ul#menu {
+		margin: 0 5% 0 5%;
+	}
+}
 #header-frame header ul#menu li {
 	display: inline;
 }
 
 #header-frame header ul#menu li.line {
-	padding-left: 99%;
+	padding: 0 0 0 99%;
+	height: 0;
+	margin: 0;
+	line-height: 0;
+	font-size: 0;
 }
 
 #header-frame header ul#menu li a img {
-	margin: auto;
-	margin: 5px;
-	width: 30px;
-}
-
-
-/*************
- * App-Frame *
- *************/
-#app-frame {
-	clear: both;
-	height: 100px;
-}
-
-/***************
- *     View    *
- ***************/
- .box {
- 	margin: 5px;
-	padding: 10px;
-	background-color: #FFFFFF;
-	display: block;
-	border: 1px solid #CCCCCC;
-	border-radius: 7px;
-	text-decoration: none;
-	color: black;
-	font-size: 0.9em;
-}
-
-a.box {
-	border-color: #AA8888;
-}
-
-.box h2 {
-	font-size: 1.2em;
-	margin: 0 0 0px 0;
-}
-
-.scroll {
-    overflow: auto;
-    -webkit-overflow-scrolling: touch;
-      overflow: auto;
-    -webkit-overflow-scrolling: touch;
-    position: absolute;
-    top: 40px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
+	height: 7%;
+	margin-top: 5px;
 }
 
 /***************
@@ -91,7 +121,6 @@ a.box {
 #events-view ul li a p.time {
 	margin: 0px;
 	font-style: italic;
-	
 }
 
 #events-view ul li a p.name {
@@ -126,34 +155,40 @@ a.box {
 	padding: 0;
 }
 
+
+#news-view ul li a.removed {
+	font-style: italic;
+	text-align: center;
+	display: block;
+}
+
 /****************
  * Numbers-View *
  ****************/
-#numbers-view ul li {
-	min-height: 40px;
-}
 
 #numbers-view ul li h2 {
 	display: inline-block;
+	width: 65%;
 }
 
 #numbers-view ul li p.birthday {
 	display: inline-block;
+	width: 33%;
 	font-weight: bold;
-	font-style:italic;
-	color: #a53838;
-	right: 20px;
-	position: absolute;
+	font-style: italic;
+	color: #A53838;
+	text-align: right;
 }
 
 #numbers-view ul li p.phone {
 	display: inline-block;
+	width: 65%;
 }
 
 #numbers-view ul li p.mobile {
 	display: inline-block;
-	right: 20px;
-	position: absolute;
+	width: 33%;
+	text-align: right;
 }
 
 
@@ -164,14 +199,14 @@ a.box {
 #intern-view p {
 	margin: 10px;
 	text-align: center;
-	font-size: 1.1em;
+	font-size: 0.8em;
 }
 
 #intern-view form fieldset input {
 	display: block;
-	margin: 10px;
+	margin: 5%;
 	border: 1px solid #CCCCCC;
-	font-size: 1.3em;
-	width: 93%;
-	height: 50px;
+	font-size: 2em;
+	width: 90%;
+	padding: 2%;
 }
