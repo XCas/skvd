@@ -1,5 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="de.schalmeien_dudweiler.app" version="2.3.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+<widget
+	id="de.schalmeien_dudweiler.app"
+	version="2.3.0"
+	android-versionCode="202029"
+	xmlns="http://www.w3.org/ns/widgets"
+	xmlns:gap="http://phonegap.com/ns/1.0"
+	>
     <name>SKVD</name>
     <description>
         Offizielle SKVD App
@@ -22,7 +28,7 @@
     <preference name="auto-hide-splash-screen" value="true" />
     <preference name="disable-cursor" value="false" />
     <preference name="android-minSdkVersion"    value="14" />
-    <preference name="android-targetSdkVersion" value="26" />
+    <preference name="android-targetSdkVersion" value="28" />
     <preference name="android-installLocation" value="auto" />
     <!--<gap:plugin name="org.apache.cordova.battery-status" />
     <gap:plugin name="org.apache.cordova.camera" />
