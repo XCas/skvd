@@ -60,7 +60,11 @@
 				<a class="box" href="#events&{{id}}">
 					<h2>{{date}}</h2>
 					<p class="time">{{time}}</p>
-					<p class="name">{{name}}</p>
+					{{#if private}}
+						<p class="name privat">(Intern) {{name}}</p>
+					{{else}}
+						<p class="name">{{name}}</p>
+					{{/if}}
 				</a>
 			</li>
 		{{/events}}

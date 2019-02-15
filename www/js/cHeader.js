@@ -11,7 +11,7 @@ var Header = function() {
 		if ( hash.match("&save") ) {
 			backbutton	    = {"imgsrc":"back", "back": "true", "ahref":"#events" };
 		} else {
-			backbutton	    = {"imgsrc":"back", "back": "true", "onclick":"history.go(-1);navigator.app.backHistory();"};
+			backbutton	    = {"imgsrc":"back", "back": "true", "onclick":"history.go(-1);"};
 		}
 		
 		var eventsbutton    = {"imgsrc":"events", "ahref":"#events"};

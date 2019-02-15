@@ -1,12 +1,12 @@
 var SKVDApp = function() {
 
-	this.registerEvents = function() {		
+	this.registerEvents = function() {
 	    $(window).on('hashchange', $.proxy(this.render, this));
 	};
-	
+
 	this.initialize = function() {
 	    var self = this;
-		
+
 	    FastClick.attach(document.body);
 
 	    this.registerEvents();
@@ -15,27 +15,27 @@ var SKVDApp = function() {
 	    this.notevaultURL = "#notevault";
 	    this.numbersURL = "#numbers";
 	    this.settingsURL = "#settings";
-	    
+
 	    this.data = new Data();
 	    this.data.initialize();
 	};
-	
-	this.render = function () {		
+
+	this.render = function () {
 		var self = this;
 	    var hash = window.location.hash;
-	    
+
 	    var header = new Header();
 	    $("#header-frame").html(header.render(hash));
-	    
+
 	    if (!hash) { // If there is no hash, just assume the eventspage is chosen. (defaultpage)
 	    	hash = this.eventsURL;
 	    	window.location.hash = this.eventsURL;
 	    }
-	    
+
     	if (hash.match(this.eventsURL)) {
     		var ev = new EventsView();
 	    	ev.initialize();
-	    	
+
 	    	if ( hash.match("&") ) {
 	    		var id = hash.split("&")[1];
 		    	$("#app-frame").html(ev.render(id));
@@ -49,12 +49,11 @@ var SKVDApp = function() {
 	    	nv.initialize();
 	    	$("#app-frame").html(nv.render());
 	    }
-	    
-	    
+
     	if (hash.match(this.notevaultURL)) {
     		var notevault = new NotevaultView();
 	    	notevault.initialize();
-	    	
+
 	   		if ( hash.match("&") ) {
 	    		var hashsplit = hash.split("&");
 	    		switch ( hashsplit.length ) {
@@ -71,10 +70,9 @@ var SKVDApp = function() {
 			} else {
 				$("#app-frame").html(notevault.render(1));
 	    	}
-	    	
+
 		}
-		
-		
+
 	    else if (hash.match(this.numbersURL)) {
 	    	var nuv = new NumbersView();
 	    	nuv.initialize();
@@ -82,7 +80,7 @@ var SKVDApp = function() {
 	    }
 	    else if (hash.match(this.settingsURL)) {
 	    	var sv = new SettingsView();
-	    	
+
 	    	if ( hash.match("&") ) {
 	    		var action = hash.split("&")[1];
 		    	sv.initialize(action);

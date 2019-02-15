@@ -4,6 +4,18 @@ var SettingsView = function() {
 	this.version_info = "";
 	
 	this.version_info_text = "";
+
+	this.version_info_text += '<h3>V2.3.0 - 2019-02-15</h3><ul>';
+	this.version_info_text += '<li>Added support for internal events</li></ul>';
+	this.version_info_text += '<li>Added support for embedded youtube videos in news</li></ul>';
+	this.version_info_text += '<li>Added support for correct sized images in news</li></ul>';
+	
+	this.version_info_text += '<h3>V2.2.2 - 2016-10-06</h3><ul>';
+	this.version_info_text += '<li>Bugfix: Backbutton went 2 steps back</li></ul>';
+	
+	this.version_info_text += '<h3>V2.2.1 - 2016-10-06</h3><ul>';
+	this.version_info_text += '<li>Deactivated fullscreen in config</li></ul>';
+	
 	this.version_info_text += '<h3>V2.2.0 - 2016-10-04</h3><ul>';
 	this.version_info_text += '<li>Added Notevault</li>';
 	this.version_info_text += '<li>Added new loginfeedback</li>';
@@ -49,10 +61,10 @@ var SettingsView = function() {
 			this.settings.settings.push({"title":"Neues Passwort", "text":"Das eingegebene Passwort wurde gespeichert.", "class": "notify"});
 		}
 		
-		this.settings.settings.push({"title":"SKVD - App", "text":"Schalmeien- und Kulturverein Dudweiler e.V.<br/><a target=\"_blank\" href=\"https://www.Schalmeien-Dudweiler.de\">https://www.Schalmeien-Dudweiler.de</a>"});
+		this.settings.settings.push({"title":"SKVD - App", "text":"Schalmeien- und Kulturverein Dudweiler e.V.<br/><a target=\"_blank\" href=\"https://www.Schalmeien-Dudweiler.de\">https://www.Schalmeien-Dudweiler.de</a><br/><br/>Man findet die Schalodris auch auf <a target=\"_blank\" href=\"https://www.facebook.com/SKVDeV/\">Facebook</a> und <a target=\"_blank\" href=\"https://www.youtube.com/channel/UCwmDiop0H1irRXX4djAtifg\">Youtube</a>"});
 		this.settings.settings.push({"title":"Autor", "text":"Uwe Caspari - <a href=\"mailto:UCas@UCasLife.de\">UCas@UCasLife.de</a> - <a target=\"_blank\" href=\"http://ucaslife.de\">UCasLife.de</a>", "onClick":""});
 		this.settings.settings.push({"title":"Lizenz", "text":"<a target=\"_blank\" href=\"http://www.gnu.org/licenses/gpl-3.0.html\">GNU GPLv3</a>"});
-		this.settings.settings.push({"title":"Version", "text":"2.2.0", "href":"#settings&version"});
+		this.settings.settings.push({"title":"Version", "text":"2.3.0", "href":"#settings&version"});
 		this.settings.settings.push({"title":"Synchronisieren", "text":"Die Daten sofort aktualisieren", "href":"#settings", "onClick":"SettingsView.btnSyncClick();"});
 		this.settings.settings.push({"title":"SKVD Intern", "text":"Aktivierung des geschützten Bereichs", "href":"#settings&intern"});
 		

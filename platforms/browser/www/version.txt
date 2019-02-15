@@ -1,6 +1,17 @@
 *********************************
-*	SKVD e.V. - App		*
+	SKVD e.V. - App		
 *********************************
+
+* V2.3.0 - 2019-02-15
+- Added support for internal events
+- Added support for embedded youtube videos in news
+- Added support for correct sized images in news
+
+* V2.2.2 - 2016-10-06
+- Bugfix: Backbutton went 2 steps back
+
+* V2.2.1 - 2016-10-06
+- Deactivated fullscreen in config
 
 * V2.2.0 - 2016-10-04
 - Added Notevault

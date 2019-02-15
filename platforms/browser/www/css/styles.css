@@ -129,6 +129,13 @@ ul.nolist {
 	font-weight: bold;
 }
 
+#events-view ul li a p.privat {
+	margin: 0px;
+	color: #FF0000;
+	font-weight: bold;
+}
+
+
 /*********************
  * Single-Event-View *
  *********************/
