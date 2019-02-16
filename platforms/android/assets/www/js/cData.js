@@ -10,13 +10,13 @@ var Data = function() {
 	    this.getObjectFromWebService("numbers", this.key);
 	    this.getObjectFromWebService("notevault", this.key);
 	}
-
+	
 	this.getObjectFromWebService = function( object, key ) {
 		$.ajax({
 		    url: this.url,
 		    dataType: 'text',
 		    type: 'GET',
-	        async: false,
+	        async: true,
 	        data: { get: object, key: key },
 		    crossDomain: true,
 		    success: function( data ) {
@@ -24,7 +24,7 @@ var Data = function() {
 		    	window.localStorage.setItem(object, data);
 		    },
 		    error: function (xhr, ajaxOptions, thrownError) {
-		    	//alert("Folgender Fehler ist aufgetreten: " + JSON.stringify(xhr) + " ; " + JSON.stringify(ajaxOptions) + " ; " + JSON.stringify(thrownError));
+		    	//console.log("Folgender Fehler ist aufgetreten: " + JSON.stringify(xhr) + " ; " + JSON.stringify(ajaxOptions) + " ; " + JSON.stringify(thrownError));
 		    } 
 		});
 	};

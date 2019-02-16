@@ -2,6 +2,9 @@
 	SKVD e.V. - App		
 *********************************
 
+* V2.3.1 - 2019-02-16
+- Bugfix: App was not able to connect to server API, now every tab change starts sync
+
 * V2.3.0 - 2019-02-15
 - Added support for internal events
 - Added support for embedded youtube videos in news

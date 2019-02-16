@@ -15,15 +15,16 @@ var SKVDApp = function() {
 	    this.notevaultURL = "#notevault";
 	    this.numbersURL = "#numbers";
 	    this.settingsURL = "#settings";
-
-	    this.data = new Data();
-	    this.data.initialize();
 	};
 
 	this.render = function () {
 		var self = this;
 	    var hash = window.location.hash;
 
+		this.data = new Data();
+		this.data.initialize();
+
+		
 	    var header = new Header();
 	    $("#header-frame").html(header.render(hash));
 

@@ -5,6 +5,10 @@ var SettingsView = function() {
 	
 	this.version_info_text = "";
 
+	
+	this.version_info_text += '<h3>V2.3.1 - 2019-02-16</h3><ul>';
+	this.version_info_text += '<li>Bugfix: App was not able to connect to server API, now every tab change starts sync</li></ul>';
+
 	this.version_info_text += '<h3>V2.3.0 - 2019-02-15</h3><ul>';
 	this.version_info_text += '<li>Added support for internal events</li></ul>';
 	this.version_info_text += '<li>Added support for embedded youtube videos in news</li></ul>';
